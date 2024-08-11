@@ -1,0 +1,11 @@
+
+{% if request.user.is_authenticated %}
+    <a href="{% url 'LogoutPage' %}" class="btn btn-dark" type="submit">Logout</a>
+    <a class="btn btn-success" href="{% url 'ProfilePage' %}">profile</a>
+    <a class="btn btn-primary" href="{% url 'TweetPage' %}">tweet</a>
+{% else %}
+    <a href="{% url 'LoginPage' %}" class="btn btn-secondary mx-1" type="submit">Login</a>
+    <a href="{% url 'HomePage' %}" class="btn btn-secondary mx-1" type="submit">Home</a>
+    <a href="{% url 'RegisterPage' %}" class="btn btn-dark mx-1" type="submit">Register</a>
+{% endif %}
+  </div>
